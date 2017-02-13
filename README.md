@@ -6,9 +6,4 @@ mangastream download desktop
 install python
 just run mshome.py
 
-'''Python
-python mshome.py
-'''
-
-Donate for Mangastream
-Mangastream.com is fan to fan
+Donate for Mangastream.com is fan to fan
