@@ -28,14 +28,14 @@ def clean():
 		try:
 			os.system('clear')
 		except:
-			print "Error Clean"
+			print "Erro ao Limpar"
 
 def progress(count, total):
 	bar_len = 40
 	percent = float(count) / float(total)
 	hashes = '#' * int(round(percent * bar_len))
 	spaces = ' ' * (bar_len - len(hashes))
-	sys.stdout.write("\rDownloading: [{0}] {1}% {2}/{3}".format(hashes + spaces, int(round(percent * 100)), int(count), int(total)))
+	sys.stdout.write("\rBaixando: [{0}] {1}% {2}/{3}".format(hashes + spaces, int(round(percent * 100)), int(count), int(total)))
 	sys.stdout.flush()
 			
 def download(download_name,download_url,download_limit = False,download_current = False,downl = 0):
@@ -46,7 +46,7 @@ def download(download_name,download_url,download_limit = False,download_current 
 		try:
 			download_urls = url(download_url)
 		except:
-			print 'Falha ao downlado'
+			print 'Falha ao baixar a Imagem'
 		else:
 			pathh = "{0}".format(os.path.join(os.path.expandvars("%userprofile%"),"Desktop", download_name))
 			if not os.path.exists(pathh):
@@ -63,7 +63,7 @@ def download(download_name,download_url,download_limit = False,download_current 
 			try: 
 				file = open(join(pathh, nname),'wb')
 			except:
-				print 'falha ao criar'
+				print 'Falha ao criar a Pasta'
 			else:
 				file.write(resource.read())
 				file.close()
@@ -71,8 +71,8 @@ def download(download_name,download_url,download_limit = False,download_current 
 			
 	else:
 		progress(downl, download_limit)
-		print "\nDone!\n"
-		option = raw_input("Continue? [y our n] ")
+		print "\nFeito!\n"
+		option = raw_input("Continuar? [s our n] ")
 	
 		if option is "y":
 			clean()
@@ -116,28 +116,28 @@ def intro():
 	for i in list(realase):
 		if realase[i][2]:
 			if n is 1:
-				print 'News Realases:\n'
+				print 'Novos Capitulos:\n'
 				n = int(n) + int(1)
 			print '\t#'+str(i)+' '+realase[i][0]
 		else:
 			if n is 2:
-				print '\nOld Chapter:\n'
+				print '\nAntigos da Semana:\n'
 				n = int(n) + int(1)
 			print '#'+str(i)+' '+realase[i][0]
-	print "\n----------------------------------------------------------------------\nChoose one of the options by typing download number to select option\n\nChoose what to do..."
+	print "\n----------------------------------------------------------------------\nEscolha usando seu numero como opcao para interagir\n\nO que deseja fazer...?"
 	option = raw_input("#")
 	if option:
 		if option.isdigit():
 			if realase[int(option)]:
 				download(realase[int(option)][0],realase[int(option)][1])
 			else:
-				print 'nao existe'
+				print 'Opcao nao existe'
 		else:
-			print 'e letra'
+			print 'Em breve, que sabe adiciono mais opcoes'
 	else:
 		intro()
 
 if chkdir(path)[0]:
 	intro()
 else:
-	print "Local Dir Not Exists"
+	print "Pasta nao Existe"
