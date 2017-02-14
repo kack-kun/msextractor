@@ -78,9 +78,10 @@ def download(download_name,download_url,download_limit = False,download_current 
 			clean()
 			intro()
 		if option is "n":
-			sys.exit()
-		else:
-			sys.exit()
+			try:
+				sys.exit()
+			except:
+				os.system('exit')
 	
 		
 def intro():
