@@ -6,9 +6,6 @@ import os
 from bs4 import BeautifulSoup
 from os.path import join
 
-intro = '''MANGASTREAM (c) - MSextractor criado por kack-kun
-----------------------------------------------------------------------
-'''
 
 homepage = "http://mangastream.com"
 directory = "http://mangastream.com/manga"
@@ -40,16 +37,6 @@ def progress(count, total):
 	spaces = ' ' * (bar_len - len(hashes))
 	sys.stdout.write("\rDownloading: [{0}] {1}% {2}/{3}".format(hashes + spaces, int(round(percent * 100)), int(count), int(total)))
 	sys.stdout.flush()
-	
-
-
-#DIRECTORY
-def directory(directory):
-	return False
-#LIST DIRECTORY
-def directory_list(directorylist):
-	return False
-
 			
 def download(download_name,download_url,download_limit = False,download_current = False,downl = 0):
 	if download_current is False:
@@ -98,6 +85,7 @@ def download(download_name,download_url,download_limit = False,download_current 
 		
 def intro():
 	clean()
+	intro = "MANGASTREAM (c) - MSextractor criado por kack-kun\n----------------------------------------------------------------------\n"
 	try:
 		realase_url = url(homepage)
 	except:
