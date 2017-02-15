@@ -1,9 +1,6 @@
-# msextractor
-mangastream download desktop
+MangaStream.com (c) Download Desktop
 
 - version 1.0
+- for Windows
 
-install python
-just run mshome.py
-
-Donate for Mangastream.com is fan to fan
+Donate for Mangastream.com
